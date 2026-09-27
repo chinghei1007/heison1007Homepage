@@ -965,3 +965,29 @@ The sequence is allocated once per image before either language name is produced
 (in this project, I'm very engaged in what does it mean by test environment from Kim, however, this project's mainly is to learn springboot, with CMS. Test evnrioment could be an iteration, or i would like to talk with Kim for the appraoch, especially why would I want to build a test environment. on a project with structure that doesn't really change, I don't see the incentive to build any. But it could also be a real incentive beacuse well, the cost building one by AI is not difficult, but what does it mean by a successful test environment? it is still to be discussed, and how do i convert new features from test environment to the main environment without breaking things? This would also be another thing.)
 
 (I am proposing to let the AI write the fully console logged page, where it would show me every step, from fetching data, uploading data, like when does it recevie the data, and there will be another version of the console log test environment on the CMS side)
+
+
+(Next day)
+|||
+
+please now, have a checklist.md, on all the items that i will be need to building every step. like everything. then i will only allow you to update that list (it is just to prevent compact making you forget everything)
+
+Created [checklist.md](/Users/useroctopus-tech.com/Documents/coding/heison1007Homepage/checklist.md).
+
+It contains 1,244 lines covering:
+
+- Every public page and CMS screen
+- Components, buttons, forms, cards, and UI states
+- Grid-wide and per-post thumbnail controls
+- Backend APIs and database models
+- Authentication and security
+- Autosave, revisions, preview, and publishing
+- Media, galleries, and imports
+- Bilingual content and search
+- Themes and accessibility
+- Cloud and local deployment
+- Testing and all acceptance criteria
+- Recommended implementation order
+- Explicitly excluded features
+
+The file also records your instruction that future planning, requirement, status, and verification updates should go into `checklist.md`; I won’t change the other planning Markdown files unless you explicitly authorize it.

@@ -169,6 +169,8 @@ Each content section links to its complete list. Sections must look intentional 
 
 CMS homepage configuration should support selecting visible categories, their order, entry limits, and optional featured entries. Creating a category must not automatically overcrowd the homepage or navigation.
 
+Each homepage content section must have a CMS-controlled thumbnail display setting that switches the whole section between thumbnail and thumbnail-less cards. Each post placed in the section must also support an override with `inherit`, `show thumbnail`, and `hide thumbnail` choices. `Inherit` follows the section setting; an explicit post choice takes precedence. Thumbnail-less cards must retain a balanced layout and must not leave an empty image placeholder.
+
 ### 6.2 Navigation
 
 - Use an editorial masthead or compact studio header as the baseline direction.
@@ -187,6 +189,9 @@ CMS homepage configuration should support selecting visible categories, their or
 - Audio supports equipment-type filters such as IEM and DAC, plus brand filters.
 - Calligraphy may use script, material/tool, and series tags.
 - Coding supports project/note format and technology filters.
+- Coding must provide an additional compact grid view for browsing applications. Each grid item shows only the app name, publication date, short description, and, when enabled, a thumbnail, and links to the corresponding project detail page. The grid must reduce its column count responsively and preserve thumbnail proportions without causing page-level horizontal scrolling.
+- Every category/archive grid or content section must have a CMS-controlled thumbnail display setting that switches all of its cards between thumbnail and thumbnail-less presentation. Each post must also support an `inherit`, `show thumbnail`, or `hide thumbnail` override for that placement. The per-post override takes precedence over the grid or section setting.
+- A thumbnail-less card shows the same applicable textual metadata as its thumbnail version, reflows without reserving empty image space, and remains consistent with the shared card design system.
 - Inapplicable filters must not appear as irrelevant controls on other categories.
 
 ### 6.4 Shared article shell
@@ -315,6 +320,7 @@ Separate structured fields from body authoring:
 - Category, format, tags, optional series.
 - Author and language.
 - Cover image.
+- Card thumbnail visibility override for applicable homepage sections, category grids, and content sections; choices are inherit, show, or hide.
 - Format-specific details.
 - Publication metadata and comment override.
 - Rich-text body.
@@ -334,7 +340,7 @@ Manage categories, translated names/descriptions, tags, brands, equipment types,
 
 ### 10.6 Themes and site settings
 
-Manage palette records, site default, homepage sections, navigation visibility, site identity, About content, external links, and default comment policy.
+Manage palette records, site default, homepage sections, section-level thumbnail display defaults, navigation visibility, site identity, About content, external links, and default comment policy.
 
 ### 10.7 Import/export and history
 
