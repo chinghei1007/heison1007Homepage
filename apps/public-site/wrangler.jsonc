@@ -1,0 +1,44 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "heison-homepage-public",
+  "main": "./workers/app.js",
+  "compatibility_date": "2026-09-27",
+  "compatibility_flags": ["nodejs_compat"],
+  "preview_urls": true,
+  "observability": { "enabled": true },
+  "vars": {
+    "APP_ENV": "development"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "heison-homepage-development",
+      "database_id": "00000000-0000-0000-0000-000000000000"
+    }
+  ],
+  "env": {
+    "staging": {
+      "name": "heison-homepage-staging",
+      "vars": { "APP_ENV": "staging" },
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "heison-homepage-staging",
+          "database_id": "00000000-0000-0000-0000-000000000000"
+        }
+      ]
+    },
+    "production": {
+      "name": "heison-homepage-production",
+      "vars": { "APP_ENV": "production" },
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "heison-homepage-production",
+          "database_id": "00000000-0000-0000-0000-000000000000"
+        }
+      ]
+    }
+  }
+}
+

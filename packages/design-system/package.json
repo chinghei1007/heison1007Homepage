@@ -1,0 +1,11 @@
+{
+  "name": "@homepage/design-system",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "exports": "./src/index.js",
+  "peerDependencies": {
+    "react": "^19.3.0"
+  }
+}
+

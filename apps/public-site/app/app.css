@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: Inter, "Noto Sans TC", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Noto Serif TC", Georgia, ui-serif, serif;
+  --color-canvas: #f4f0e8;
+  --color-ink: #1f2925;
+  --color-muted: #65706b;
+  --color-accent: #9c3e2f;
+}
+
+@layer base {
+  html {
+    background: var(--color-canvas);
+    font-family: var(--font-sans);
+  }
+
+  a:focus-visible {
+    outline: 3px solid color-mix(in oklab, var(--color-accent) 65%, white);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply text-xs font-bold tracking-[0.18em] text-accent uppercase;
+  }
+
+  .nav-link {
+    @apply underline-offset-4 transition-colors hover:text-ink hover:underline;
+  }
+}
+

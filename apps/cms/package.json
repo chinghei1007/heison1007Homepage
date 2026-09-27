@@ -1,0 +1,26 @@
+{
+  "name": "@homepage/cms",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --mode development",
+    "build": "vite build",
+    "build:staging": "vite build --mode staging",
+    "build:production": "vite build --mode production",
+    "preview": "vite preview --port 4174",
+    "test": "node --test",
+    "typecheck": "node --check src/App.jsx && node --check src/main.jsx"
+  },
+  "dependencies": {
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@vitejs/plugin-react": "^6.1.1",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.3.1"
+  }
+}
+

@@ -1,0 +1,30 @@
+{
+  "name": "heison-homepage",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "workspaces": [
+    "apps/cms",
+    "apps/public-site",
+    "packages/*"
+  ],
+  "engines": {
+    "node": "24.x",
+    "npm": ">=11"
+  },
+  "scripts": {
+    "check:env": "node scripts/check-env.mjs",
+    "dev": "node scripts/dev.mjs",
+    "dev:api": "node scripts/run-api.mjs development",
+    "dev:cms": "npm --workspace @homepage/cms run dev",
+    "dev:public": "npm --workspace @homepage/public-site run dev",
+    "build": "node scripts/build.mjs",
+    "build:cms": "npm --workspace @homepage/cms run build",
+    "build:public": "npm --workspace @homepage/public-site run build",
+    "build:api": "mvn -f apps/editorial-api/pom.xml verify",
+    "test": "npm run test --workspaces --if-present && mvn -f apps/editorial-api/pom.xml test",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present"
+  }
+}
+

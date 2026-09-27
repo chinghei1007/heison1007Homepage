@@ -17,12 +17,12 @@ Status: implementation checklist and durable project memory
 
 ## 1. Confirm and record implementation decisions
 
-- [ ] Select supported Java version.
-- [ ] Select supported Spring Boot version.
-- [ ] Select Node.js version.
-- [ ] Select React and Vite versions.
-- [ ] Select the public React SSR approach compatible with Cloudflare Workers.
-- [ ] Select CSS strategy without imposing a generic Bootstrap appearance.
+- [x] Select supported Java version. Java 21 LTS; recorded in `.java-version` and `apps/editorial-api/pom.xml`.
+- [x] Select supported Spring Boot version. Spring Boot 4.1.1; recorded in `apps/editorial-api/pom.xml`.
+- [x] Select Node.js version. Node 24 LTS; recorded in `.nvmrc` and root `package.json`.
+- [x] Select React and Vite versions. React 19.3 and Vite 8.3; recorded in both application manifests.
+- [x] Select the public React SSR approach compatible with Cloudflare Workers. React Router 8 framework mode with the Cloudflare Vite plugin and SSR enabled.
+- [x] Select CSS strategy without imposing a generic Bootstrap appearance. Tailwind CSS 4 utilities, CSS-first theme tokens, and limited `@apply` component classes; no Sass preprocessor.
 - [ ] Select final font families with English, Traditional Chinese, and mixed-text support.
 - [ ] Define layout breakpoints based on available space.
 - [ ] Define the authentication/session implementation for the single owner account.
@@ -31,32 +31,32 @@ Status: implementation checklist and durable project memory
 - [ ] Prototype and select the Chinese search tokenisation/indexing strategy.
 - [ ] Select the Render plan/runtime configuration after testing cold-start and resource constraints.
 - [ ] Recheck current Cloudflare, D1, Workers, Render, and editor pricing/limits before deployment.
-- [ ] Define the site timezone; default to `Asia/Hong_Kong` unless deliberately changed.
+- [x] Define the site timezone; `Asia/Hong_Kong` is the application default in `application.properties`.
 - [ ] Decide the bounded public publication refresh target, no more than 60 seconds under normal operation.
 - [ ] Document all decisions and their reasons in this checklist or an explicitly authorized technical document.
 
 ## 2. Repository and project foundation
 
-- [ ] Initialize/verify Git repository and ignore generated files, secrets, local databases, and build output.
-- [ ] Establish the repository structure.
-  - [ ] `apps/cms` for the React/Vite owner interface.
-  - [ ] `apps/public-site` for public React rendering.
-  - [ ] `apps/editorial-api` for Spring Boot.
-  - [ ] `workers/public-read` for published-only D1 reads/rendering integration.
-  - [ ] `packages/contracts` for versioned contracts/shared schemas.
-  - [ ] `packages/design-system` for tokens and shared React components.
-  - [ ] `packages/content-renderer` for approved article rendering.
-  - [ ] `database/migrations` for D1/SQLite-compatible migrations.
-  - [ ] `database/fixtures` for search and acceptance fixtures.
-  - [ ] `docs` for deployment and operations documentation.
-- [ ] Add root development scripts for install, build, test, lint, and type-check.
+- [x] Initialize/verify Git repository and ignore generated files, secrets, local databases, and build output. Evidence: root `.gitignore`.
+- [x] Establish the repository structure.
+  - [x] `apps/cms` for the React/Vite owner interface.
+  - [x] `apps/public-site` for public React rendering.
+  - [x] `apps/editorial-api` for Spring Boot.
+  - [x] `workers/public-read` for published-only D1 reads/rendering integration.
+  - [x] `packages/contracts` for versioned contracts/shared schemas.
+  - [x] `packages/design-system` for tokens and shared React components.
+  - [x] `packages/content-renderer` for approved article rendering.
+  - [x] `database/migrations` for D1/SQLite-compatible migrations.
+  - [x] `database/fixtures` for search and acceptance fixtures.
+  - [x] `docs` for deployment and operations documentation.
+- [x] Add root development scripts for install, build, test, lint, and type-check. Evidence: root `package.json` and `scripts/*.mjs`.
 - [ ] Add code formatting and linting configuration.
-- [ ] Add configuration templates containing placeholders only.
-- [ ] Add separate development, staging, production, and local profiles.
+- [x] Add configuration templates containing placeholders only. Evidence: root and app `.env.example` files plus zero-ID Wrangler placeholders.
+- [x] Add separate development, staging, production, and local profiles. Evidence: Vite mode files, Spring profile properties, and Wrangler environments.
 - [ ] Define an explicit versioned API contract.
 - [ ] Establish shared fixtures to prevent Java/Worker behavior drift.
 - [ ] Establish automated checks for frontend, backend, migrations, and contracts.
-- [ ] Document prerequisites and initial developer setup.
+- [x] Document prerequisites and initial developer setup. Evidence: `docs/environment-setup.md`.
 
 ## 3. Shared design system
 
@@ -1241,4 +1241,3 @@ Status: implementation checklist and durable project memory
 - [ ] Do not run portfolio applications inside the CMS.
 - [ ] Do not use paid Cloudflare Containers while claiming a free baseline.
 - [ ] Do not allow future optional work to block the first complete publishing loop.
-

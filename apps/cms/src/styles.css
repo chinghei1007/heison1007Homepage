@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: Inter, "Noto Sans TC", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Noto Serif TC", Georgia, ui-serif, serif;
+
+  --color-canvas: #f4f0e8;
+  --color-surface: #fffdf8;
+  --color-ink: #1f2925;
+  --color-muted: #65706b;
+  --color-mist: #c6d0ca;
+  --color-line: #d9d4ca;
+  --color-accent: #9c3e2f;
+  --color-accent-strong: #792f24;
+
+  --radius-panel: 1.25rem;
+  --shadow-soft: 0 20px 55px rgb(40 46 42 / 0.1);
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+    font-family: var(--font-sans);
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  button,
+  a {
+    &:focus-visible {
+      outline: 3px solid color-mix(in oklab, var(--color-accent) 65%, white);
+      outline-offset: 3px;
+    }
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply text-xs font-bold tracking-[0.18em] text-accent uppercase;
+  }
+
+  .button-primary {
+    @apply min-h-11 rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-accent-strong;
+  }
+
+  .button-secondary {
+    @apply min-h-11 rounded-full border border-line bg-transparent px-5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-canvas;
+  }
+
+  .code-chip {
+    @apply mx-1 rounded bg-ink/8 px-1.5 py-0.5 font-mono text-sm text-ink;
+  }
+}
+
